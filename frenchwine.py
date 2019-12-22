@@ -42,11 +42,6 @@ for column_index, column in enumerate(df.columns):
     plt.subplot(2, 3, column_index + 1)
     sb.violinplot(x='species', y=column, data=df)
 plt.show()
-
-df['species'].loc[df['species']=='Zinfandel']='仙粉黛'
-df['species'].loc[df['species']=='Syrah']='西拉'
-df['species'].loc[df['species']=='Sauvignon']='赤霞珠'
-
 # 首先对数据进行切分，即划分出训练集和测试集
 from sklearn.model_selection import train_test_split #调入sklearn库中交叉检验，划分训练集和测试集
 all_inputs = df[['alcohol', 'malic_acid',
